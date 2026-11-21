@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
+import { Archivo } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+
+const archivo = Archivo({
+  subsets: ["latin"],
+  axes: ["wdth"],
+});
 
 export const metadata: Metadata = {
   title: {
@@ -17,7 +23,9 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className="flex min-h-screen flex-col bg-stone-50 text-stone-900 antialiased">
+      <body
+        className={`${archivo.className} flex min-h-screen flex-col bg-stone-50 text-stone-900 antialiased`}
+      >
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />
