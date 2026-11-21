@@ -23,7 +23,7 @@ export default function ProductPage() {
       <div className="mt-6 grid gap-10 lg:grid-cols-2">
         <div className="relative aspect-square overflow-hidden rounded-3xl bg-stone-100">
           <Image
-            src="/tower-hero.png"
+            src="/tower-product.png"
             alt={product.name}
             fill
             priority
