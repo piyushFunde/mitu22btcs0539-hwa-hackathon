@@ -5,6 +5,11 @@ type OrderBody = {
   email?: unknown;
   phone?: unknown;
   address?: unknown;
+  area?: unknown;
+  landmark?: unknown;
+  pincode?: unknown;
+  state?: unknown;
+  country?: unknown;
   quantity?: unknown;
 };
 
@@ -25,6 +30,10 @@ export async function POST(request: Request) {
   const email = typeof body.email === "string" ? body.email.trim() : "";
   const phone = typeof body.phone === "string" ? body.phone.trim() : "";
   const address = typeof body.address === "string" ? body.address.trim() : "";
+  const area = typeof body.area === "string" ? body.area.trim() : "";
+  const pincode = typeof body.pincode === "string" ? body.pincode.trim() : "";
+  const state = typeof body.state === "string" ? body.state.trim() : "";
+  const country = typeof body.country === "string" ? body.country.trim() : "";
   const quantity =
     typeof body.quantity === "number" ? body.quantity : Number(body.quantity);
 
@@ -36,6 +45,22 @@ export async function POST(request: Request) {
 
   if (!address) {
     errors.address = "Address is required";
+  }
+
+  if (!area) {
+    errors.area = "Area is required";
+  }
+
+  if (!/^\d{6}$/.test(pincode)) {
+    errors.pincode = "Enter a valid 6-digit pincode";
+  }
+
+  if (!state) {
+    errors.state = "State is required";
+  }
+
+  if (!country) {
+    errors.country = "Country is required";
   }
 
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {

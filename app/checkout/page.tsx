@@ -29,6 +29,11 @@ export default function CheckoutPage() {
       email: String(data.get("email") ?? ""),
       phone: String(data.get("phone") ?? ""),
       address: String(data.get("address") ?? ""),
+      area: String(data.get("area") ?? ""),
+      landmark: String(data.get("landmark") ?? ""),
+      pincode: String(data.get("pincode") ?? ""),
+      state: String(data.get("state") ?? ""),
+      country: String(data.get("country") ?? ""),
       quantity: Number(quantity),
     };
 
@@ -107,14 +112,52 @@ export default function CheckoutPage() {
 
           <section className="rounded-2xl border border-stone-200 bg-white p-6">
             <h2 className="text-sm font-medium">Shipping</h2>
-            <div className="mt-4 grid gap-4">
+            <div className="mt-4 grid gap-4 sm:grid-cols-2">
               <Field
                 label="Address"
                 name="address"
-                autoComplete="street-address"
-                placeholder="12 Maple Street, Portland, OR 97205"
+                autoComplete="address-line1"
+                placeholder="House no., building, street"
                 error={errors.address}
+                className="sm:col-span-2"
               />
+              <Field
+                label="Area"
+                name="area"
+                autoComplete="address-line2"
+                placeholder="Locality or area"
+                error={errors.area}
+              />
+              <Field
+                label="Landmark (optional)"
+                name="landmark"
+                placeholder="Near..."
+                error={errors.landmark}
+              />
+              <div className="grid gap-4 sm:col-span-2 sm:grid-cols-3">
+                <Field
+                  label="Pincode"
+                  name="pincode"
+                  inputMode="numeric"
+                  autoComplete="postal-code"
+                  placeholder="411001"
+                  error={errors.pincode}
+                />
+                <Field
+                  label="State"
+                  name="state"
+                  autoComplete="address-level1"
+                  placeholder="Maharashtra"
+                  error={errors.state}
+                />
+                <Field
+                  label="Country"
+                  name="country"
+                  autoComplete="country-name"
+                  placeholder="India"
+                  error={errors.country}
+                />
+              </div>
             </div>
           </section>
 
@@ -145,21 +188,48 @@ export default function CheckoutPage() {
             <label htmlFor="quantity" className="text-sm font-medium">
               Quantity
             </label>
-            <input
-              id="quantity"
-              name="quantity"
-              type="number"
-              min={1}
-              max={10}
-              value={quantity}
-              onChange={(event) => setQuantity(event.target.value)}
+            <div
               className={
-                "mt-1.5 w-24 rounded-xl border px-3.5 py-2.5 text-stone-900 outline-none transition " +
-                (errors.quantity
-                  ? "border-red-400 bg-red-50/40 focus:border-red-500"
-                  : "border-stone-300 bg-stone-50 focus:border-stone-500 focus:bg-white")
+                "mt-1.5 inline-flex items-stretch overflow-hidden rounded-xl border bg-stone-50 " +
+                (errors.quantity ? "border-red-400" : "border-stone-300")
               }
-            />
+            >
+              <button
+                type="button"
+                aria-label="Decrease quantity"
+                onClick={() =>
+                  setQuantity(String(Math.max(1, displayQuantity - 1)))
+                }
+                disabled={displayQuantity <= 1}
+                className="grid w-10 place-items-center text-lg text-stone-600 transition hover:bg-stone-100 disabled:cursor-not-allowed disabled:text-stone-300"
+              >
+                -
+              </button>
+              <input
+                id="quantity"
+                name="quantity"
+                type="number"
+                min={1}
+                max={10}
+                value={quantity}
+                onChange={(event) => setQuantity(event.target.value)}
+                className={
+                  "w-14 border-x bg-white py-2.5 text-center text-sm text-stone-900 outline-none [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none " +
+                  (errors.quantity ? "border-red-300" : "border-stone-300")
+                }
+              />
+              <button
+                type="button"
+                aria-label="Increase quantity"
+                onClick={() =>
+                  setQuantity(String(Math.min(10, displayQuantity + 1)))
+                }
+                disabled={displayQuantity >= 10}
+                className="grid w-10 place-items-center text-lg text-stone-600 transition hover:bg-stone-100 disabled:cursor-not-allowed disabled:text-stone-300"
+              >
+                +
+              </button>
+            </div>
             {errors.quantity && (
               <p className="mt-1.5 text-xs text-red-600">{errors.quantity}</p>
             )}

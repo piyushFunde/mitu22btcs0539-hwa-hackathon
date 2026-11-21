@@ -26,16 +26,15 @@ export default async function ConfirmationPage({
       <h1 className="mt-3 text-4xl font-semibold tracking-tight">
         You are all set.
       </h1>
+      {orderId && (
+        <p className="mt-3 inline-block max-w-full rounded-full bg-stone-200/70 px-4 py-1.5 font-mono text-sm text-stone-700">
+          <span className="break-all">Order #{orderId}</span>
+        </p>
+      )}
       <p className="mt-4 leading-relaxed text-stone-600">
         Thanks for shopping with Dog Tower. A confirmation is on its way to
         your inbox, and your order will ship within two business days.
       </p>
-      {orderId && (
-        <p className="mt-4 text-xs text-stone-500">
-          Order ID{" "}
-          <span className="break-all font-mono text-stone-700">{orderId}</span>
-        </p>
-      )}
       <div className="mt-8 flex flex-wrap justify-center gap-3">
         <Link
           href="/"
