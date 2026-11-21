@@ -1,7 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { formatPrice, products } from "@/lib/products";
-import { PawIcon } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "Clockwork Forage Tower",
@@ -20,8 +20,15 @@ export default function ProductPage() {
       </Link>
 
       <div className="mt-6 grid gap-10 lg:grid-cols-2">
-        <div className="grid aspect-square place-items-center rounded-3xl bg-gradient-to-br from-stone-100 to-stone-200">
-          <PawIcon className="size-24 text-stone-300" />
+        <div className="relative aspect-square overflow-hidden rounded-3xl bg-stone-100">
+          <Image
+            src="/tower-hero.png"
+            alt={product.name}
+            fill
+            priority
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            className="object-cover"
+          />
         </div>
 
         <div className="flex flex-col justify-center">

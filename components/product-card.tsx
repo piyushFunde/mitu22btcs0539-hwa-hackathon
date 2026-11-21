@@ -1,6 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
 import { formatPrice, type Product } from "@/lib/products";
-import { PawIcon } from "@/components/icons";
 
 export function ProductCard({ product }: { product: Product }) {
   return (
@@ -8,8 +8,14 @@ export function ProductCard({ product }: { product: Product }) {
       href="/product"
       className="group flex flex-col rounded-2xl border border-stone-200 bg-white p-3 transition hover:border-stone-300 hover:shadow-sm"
     >
-      <div className="grid aspect-[4/3] place-items-center rounded-xl bg-gradient-to-br from-stone-100 to-stone-200">
-        <PawIcon className="size-10 text-stone-400 transition group-hover:text-stone-500" />
+      <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-stone-100">
+        <Image
+          src="/tower-hero.png"
+          alt={product.name}
+          fill
+          sizes="(min-width: 640px) 384px, 90vw"
+          className="object-cover transition duration-300 group-hover:scale-105"
+        />
       </div>
       <div className="flex flex-1 flex-col px-2 pb-2 pt-4">
         <div className="flex items-baseline justify-between gap-3">
