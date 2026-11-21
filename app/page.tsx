@@ -8,21 +8,6 @@ const stats = [
   { value: "0", label: "batteries needed" },
 ];
 
-const actions = [
-  {
-    emoji: "👃",
-    title: "Nudge",
-    text: "A gentle push starts the slow release.",
-  },
-  { emoji: "🔄", title: "Flip", text: "Tip it over to reset the puzzle." },
-  {
-    emoji: "🐾",
-    title: "Slide",
-    text: "Paws slide kibble toward the openings.",
-  },
-  { emoji: "⬆️", title: "Lift", text: "Lift the lid to reload the chambers." },
-];
-
 export default function HomePage() {
   return (
     <div>
@@ -65,23 +50,6 @@ export default function HomePage() {
                 </p>
                 <p className="mt-1 text-xs font-medium uppercase tracking-wide text-amber-800">
                   {stat.label}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4">
-            {actions.map((action) => (
-              <div
-                key={action.title}
-                className="rounded-2xl border border-stone-200 bg-white/70 p-4 text-center"
-              >
-                <span className="text-2xl" aria-hidden="true">
-                  {action.emoji}
-                </span>
-                <p className="mt-2 text-sm font-medium">{action.title}</p>
-                <p className="mt-1 text-xs leading-relaxed text-stone-600">
-                  {action.text}
                 </p>
               </div>
             ))}
