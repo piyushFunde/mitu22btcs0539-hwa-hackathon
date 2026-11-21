@@ -17,34 +17,34 @@ export default async function ConfirmationPage({
 
   return (
     <div className="mx-auto max-w-2xl px-6 py-20 text-center">
-      <div className="mx-auto grid size-14 place-items-center rounded-full bg-stone-900 text-stone-50">
+      <div className="mx-auto grid size-14 place-items-center rounded-full bg-deep-plum text-white">
         <CheckIcon className="size-6" />
       </div>
-      <p className="mt-6 text-sm font-medium uppercase tracking-[0.2em] text-stone-500">
+      <p className="mt-6 text-sm font-medium uppercase tracking-[0.2em] text-plum">
         Order confirmed
       </p>
       <h1 className="mt-3 text-4xl font-semibold tracking-tight">
         You are all set.
       </h1>
       {orderId && (
-        <p className="mt-3 inline-block max-w-full rounded-full bg-stone-200/70 px-4 py-1.5 font-mono text-sm text-stone-700">
+        <p className="mt-3 inline-block max-w-full rounded-full border border-ink/10 bg-soft-plum px-4 py-1.5 font-mono text-sm text-ink">
           <span className="break-all">Order #{orderId}</span>
         </p>
       )}
-      <p className="mt-4 leading-relaxed text-stone-600">
+      <p className="mt-4 leading-relaxed text-plum">
         Thanks for shopping with Slowbowl. A confirmation is on its way to
         your inbox, and your order will ship within two business days.
       </p>
       <div className="mt-8 flex flex-wrap justify-center gap-3">
         <Link
           href="/"
-          className="rounded-full bg-amber-700 px-6 py-3 text-sm font-medium text-amber-50 transition hover:bg-amber-800"
+          className="rounded-full bg-deep-plum px-6 py-3 text-sm font-medium text-white transition hover:bg-ink"
         >
           Back to the shop
         </Link>
         <Link
           href="/product"
-          className="rounded-full border border-amber-700 px-6 py-3 text-sm font-medium text-amber-800 transition hover:bg-amber-50"
+          className="rounded-full border border-ink/15 bg-white px-6 py-3 text-sm font-medium text-ink transition hover:bg-soft-plum"
         >
           Browse the product
         </Link>

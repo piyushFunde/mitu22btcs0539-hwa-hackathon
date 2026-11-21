@@ -1,8 +1,8 @@
 export function HowItWorks() {
   return (
-    <section className="mt-16 border-t border-stone-200 pt-14">
+    <section className="mt-16 border-t border-ink/10 pt-14">
       <h2 className="text-2xl font-semibold tracking-tight">How it works</h2>
-      <p className="mt-2 max-w-xl text-stone-600">
+      <p className="mt-2 max-w-xl text-plum">
         Wind it up, load it, and let your dog work for dinner.
       </p>
 
@@ -29,7 +29,7 @@ export function HowItWorks() {
           <h3 className="text-lg font-semibold tracking-tight">
             Safety &amp; limits
           </h3>
-          <ul className="mt-4 space-y-3 text-sm leading-relaxed text-stone-600">
+          <ul className="mt-4 space-y-3 text-sm leading-relaxed text-plum">
             <SafetyItem
               title="Dry food only"
               body="Wet food, treats, and very small pieces can jam the mechanism."
@@ -51,7 +51,7 @@ export function HowItWorks() {
 
         <div>
           <h3 className="text-lg font-semibold tracking-tight">FAQs</h3>
-          <div className="mt-4 divide-y divide-stone-200 rounded-2xl border border-stone-200 bg-white">
+          <div className="mt-4 divide-y divide-ink/10 rounded-2xl border border-ink/10 bg-white">
             <Faq
               question="How long does one wind last?"
               answer="About three hours, depending on the kibble size and how far the openings are set."
@@ -85,12 +85,12 @@ function Step({
   body: string;
 }) {
   return (
-    <li className="rounded-2xl border border-stone-200 bg-white p-6">
-      <span className="grid size-8 place-items-center rounded-full bg-stone-900 text-xs font-medium text-stone-50">
+    <li className="rounded-2xl border border-ink/10 bg-white p-6">
+      <span className="grid size-8 place-items-center rounded-full bg-deep-plum text-xs font-medium text-white">
         {number}
       </span>
       <h3 className="mt-4 font-medium">{title}</h3>
-      <p className="mt-1 text-sm leading-relaxed text-stone-600">{body}</p>
+      <p className="mt-1 text-sm leading-relaxed text-plum">{body}</p>
     </li>
   );
 }
@@ -98,9 +98,9 @@ function Step({
 function SafetyItem({ title, body }: { title: string; body: string }) {
   return (
     <li className="flex gap-3">
-      <span className="mt-2 size-1.5 shrink-0 rounded-full bg-stone-400" />
+      <span className="mt-2 size-1.5 shrink-0 rounded-full bg-plum/40" />
       <span>
-        <span className="font-medium text-stone-800">{title}.</span> {body}
+        <span className="font-medium text-ink">{title}.</span> {body}
       </span>
     </li>
   );
@@ -111,11 +111,11 @@ function Faq({ question, answer }: { question: string; answer: string }) {
     <details className="group px-5 py-4">
       <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-medium [&::-webkit-details-marker]:hidden">
         {question}
-        <span className="text-lg text-stone-400 transition group-open:rotate-45">
+        <span className="text-lg text-plum transition group-open:rotate-45">
           +
         </span>
       </summary>
-      <p className="mt-2 text-sm leading-relaxed text-stone-600">{answer}</p>
+      <p className="mt-2 text-sm leading-relaxed text-plum">{answer}</p>
     </details>
   );
 }

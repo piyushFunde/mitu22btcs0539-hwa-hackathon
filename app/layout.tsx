@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${archivo.className} flex min-h-screen flex-col bg-stone-50 text-stone-900 antialiased`}
+        className={`${archivo.className} flex min-h-screen flex-col bg-mist text-ink antialiased`}
       >
         <SiteHeader />
         <main className="flex-1">{children}</main>

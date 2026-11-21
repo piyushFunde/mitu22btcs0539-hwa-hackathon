@@ -75,12 +75,12 @@ export default function CheckoutPage() {
 
   return (
     <div className="mx-auto max-w-5xl px-6 py-14">
-      <p className="text-sm text-stone-500">Step 2 of 3</p>
+      <p className="text-sm text-plum">Step 2 of 3</p>
       <h1 className="mt-2 text-3xl font-semibold tracking-tight">Checkout</h1>
 
       <div className="mt-8 grid gap-10 lg:grid-cols-[1.4fr_1fr]">
         <form className="space-y-5" noValidate onSubmit={handleSubmit}>
-          <section className="rounded-2xl border border-stone-200 bg-white p-6">
+          <section className="rounded-2xl border border-ink/10 bg-white p-6">
             <h2 className="text-sm font-medium">Contact</h2>
             <div className="mt-4 grid gap-4 sm:grid-cols-2">
               <Field
@@ -110,7 +110,7 @@ export default function CheckoutPage() {
             </div>
           </section>
 
-          <section className="rounded-2xl border border-stone-200 bg-white p-6">
+          <section className="rounded-2xl border border-ink/10 bg-white p-6">
             <h2 className="text-sm font-medium">Shipping</h2>
             <div className="mt-4 grid gap-4 sm:grid-cols-2">
               <Field
@@ -166,32 +166,32 @@ export default function CheckoutPage() {
           <button
             type="submit"
             disabled={submitting}
-            className="inline-flex w-full items-center justify-center rounded-full bg-amber-700 px-6 py-3.5 text-sm font-medium text-amber-50 transition hover:bg-amber-800 disabled:cursor-not-allowed disabled:opacity-60"
+            className="inline-flex w-full items-center justify-center rounded-full bg-deep-plum px-6 py-3.5 text-sm font-medium text-white transition hover:bg-ink disabled:cursor-not-allowed disabled:opacity-60"
           >
             {submitting ? "Placing order" : "Place order"}
           </button>
         </form>
 
-        <aside className="h-fit rounded-2xl border border-stone-200 bg-white p-6">
+        <aside className="h-fit rounded-2xl border border-ink/10 bg-white p-6">
           <h2 className="text-sm font-medium">Order summary</h2>
           <div className="mt-4 flex items-start justify-between gap-4 text-sm">
             <div>
               <p className="font-medium">{product.name}</p>
-              <p className="mt-1 text-stone-500">
+              <p className="mt-1 text-plum">
                 Qty {displayQuantity} · {product.tagline}
               </p>
             </div>
             <p>{formatPrice(product.price)}</p>
           </div>
 
-          <div className="mt-6 border-t border-stone-200 pt-4">
+          <div className="mt-6 border-t border-ink/10 pt-4">
             <label htmlFor="quantity" className="text-sm font-medium">
               Quantity
             </label>
             <div
               className={
-                "mt-1.5 inline-flex items-stretch overflow-hidden rounded-xl border bg-stone-50 " +
-                (errors.quantity ? "border-red-400" : "border-stone-300")
+                "mt-1.5 inline-flex items-stretch overflow-hidden rounded-xl border bg-white " +
+                (errors.quantity ? "border-red-400" : "border-ink/15")
               }
             >
               <button
@@ -201,7 +201,7 @@ export default function CheckoutPage() {
                   setQuantity(String(Math.max(1, displayQuantity - 1)))
                 }
                 disabled={displayQuantity <= 1}
-                className="grid w-10 place-items-center text-lg text-amber-700 transition hover:bg-amber-50 disabled:cursor-not-allowed disabled:text-stone-300"
+                className="grid w-10 place-items-center text-lg text-ink transition hover:bg-soft-plum disabled:cursor-not-allowed disabled:text-plum/30"
               >
                 -
               </button>
@@ -214,8 +214,8 @@ export default function CheckoutPage() {
                 value={quantity}
                 onChange={(event) => setQuantity(event.target.value)}
                 className={
-                  "w-14 border-x bg-white py-2.5 text-center text-sm text-stone-900 outline-none [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none " +
-                  (errors.quantity ? "border-red-300" : "border-stone-300")
+                  "w-14 border-x bg-white py-2.5 text-center text-sm text-ink outline-none [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none " +
+                  (errors.quantity ? "border-red-300" : "border-ink/15")
                 }
               />
               <button
@@ -225,7 +225,7 @@ export default function CheckoutPage() {
                   setQuantity(String(Math.min(10, displayQuantity + 1)))
                 }
                 disabled={displayQuantity >= 10}
-                className="grid w-10 place-items-center text-lg text-amber-700 transition hover:bg-amber-50 disabled:cursor-not-allowed disabled:text-stone-300"
+                className="grid w-10 place-items-center text-lg text-ink transition hover:bg-soft-plum disabled:cursor-not-allowed disabled:text-plum/30"
               >
                 +
               </button>
@@ -235,21 +235,21 @@ export default function CheckoutPage() {
             )}
           </div>
 
-          <dl className="mt-6 space-y-2 border-t border-stone-200 pt-4 text-sm">
+          <dl className="mt-6 space-y-2 border-t border-ink/10 pt-4 text-sm">
             <div className="flex justify-between">
-              <dt className="text-stone-500">Subtotal</dt>
+              <dt className="text-plum">Subtotal</dt>
               <dd>{formatPrice(total)}</dd>
             </div>
             <div className="flex justify-between">
-              <dt className="text-stone-500">Shipping</dt>
+              <dt className="text-plum">Shipping</dt>
               <dd>Free</dd>
             </div>
-            <div className="flex justify-between border-t border-stone-200 pt-3 font-medium">
+            <div className="flex justify-between border-t border-ink/10 pt-3 font-medium">
               <dt>Total</dt>
               <dd>{formatPrice(total)}</dd>
             </div>
           </dl>
-          <p className="mt-4 text-xs leading-relaxed text-stone-500">
+          <p className="mt-4 text-xs leading-relaxed text-plum">
             This is a demo checkout. No payment is taken and no data is stored.
           </p>
         </aside>
@@ -281,7 +281,7 @@ function Field({
 }: FieldProps) {
   return (
     <label className={"block text-sm " + (className ?? "")}>
-      <span className="font-medium text-stone-700">{label}</span>
+      <span className="font-medium text-ink">{label}</span>
       <input
         name={name}
         type={type}
@@ -290,10 +290,10 @@ function Field({
         inputMode={inputMode}
         aria-invalid={Boolean(error)}
         className={
-          "mt-1.5 w-full rounded-xl border px-3.5 py-2.5 text-stone-900 outline-none transition placeholder:text-stone-400 " +
+          "mt-1.5 w-full rounded-xl border px-3.5 py-2.5 text-ink outline-none transition placeholder:text-plum/50 " +
           (error
             ? "border-red-400 bg-red-50/40 focus:border-red-500"
-            : "border-stone-300 bg-stone-50 focus:border-stone-500 focus:bg-white")
+            : "border-ink/15 bg-white focus:border-ink/40")
         }
       />
       {error && <p className="mt-1.5 text-xs text-red-600">{error}</p>}
