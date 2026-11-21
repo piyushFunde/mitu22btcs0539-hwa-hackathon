@@ -166,7 +166,7 @@ export default function CheckoutPage() {
           <button
             type="submit"
             disabled={submitting}
-            className="inline-flex w-full items-center justify-center rounded-full bg-stone-900 px-6 py-3.5 text-sm font-medium text-stone-50 transition hover:bg-stone-700 disabled:cursor-not-allowed disabled:opacity-60"
+            className="inline-flex w-full items-center justify-center rounded-full bg-amber-700 px-6 py-3.5 text-sm font-medium text-amber-50 transition hover:bg-amber-800 disabled:cursor-not-allowed disabled:opacity-60"
           >
             {submitting ? "Placing order" : "Place order"}
           </button>
@@ -201,7 +201,7 @@ export default function CheckoutPage() {
                   setQuantity(String(Math.max(1, displayQuantity - 1)))
                 }
                 disabled={displayQuantity <= 1}
-                className="grid w-10 place-items-center text-lg text-stone-600 transition hover:bg-stone-100 disabled:cursor-not-allowed disabled:text-stone-300"
+                className="grid w-10 place-items-center text-lg text-amber-700 transition hover:bg-amber-50 disabled:cursor-not-allowed disabled:text-stone-300"
               >
                 -
               </button>
@@ -225,7 +225,7 @@ export default function CheckoutPage() {
                   setQuantity(String(Math.min(10, displayQuantity + 1)))
                 }
                 disabled={displayQuantity >= 10}
-                className="grid w-10 place-items-center text-lg text-stone-600 transition hover:bg-stone-100 disabled:cursor-not-allowed disabled:text-stone-300"
+                className="grid w-10 place-items-center text-lg text-amber-700 transition hover:bg-amber-50 disabled:cursor-not-allowed disabled:text-stone-300"
               >
                 +
               </button>

@@ -38,13 +38,13 @@ export default async function ConfirmationPage({
       <div className="mt-8 flex flex-wrap justify-center gap-3">
         <Link
           href="/"
-          className="rounded-full bg-stone-900 px-6 py-3 text-sm font-medium text-stone-50 transition hover:bg-stone-700"
+          className="rounded-full bg-amber-700 px-6 py-3 text-sm font-medium text-amber-50 transition hover:bg-amber-800"
         >
           Back to the shop
         </Link>
         <Link
           href="/product"
-          className="rounded-full border border-stone-300 px-6 py-3 text-sm font-medium text-stone-700 transition hover:border-stone-400 hover:text-stone-900"
+          className="rounded-full border border-amber-700 px-6 py-3 text-sm font-medium text-amber-800 transition hover:bg-amber-50"
         >
           Browse the product
         </Link>

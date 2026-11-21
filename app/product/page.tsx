@@ -53,7 +53,7 @@ export default function ProductPage() {
           </ul>
           <Link
             href="/checkout"
-            className="mt-8 inline-flex w-full items-center justify-center rounded-full bg-stone-900 px-6 py-3.5 text-sm font-medium text-stone-50 transition hover:bg-stone-700 sm:w-auto"
+            className="mt-8 inline-flex w-full items-center justify-center rounded-full bg-amber-700 px-6 py-3.5 text-sm font-medium text-amber-50 transition hover:bg-amber-800 sm:w-auto"
           >
             Buy now
           </Link>
