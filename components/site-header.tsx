@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { GearIcon } from "@/components/icons";
+import { PawIcon } from "@/components/icons";
 
 export function SiteHeader() {
   return (
@@ -10,7 +10,7 @@ export function SiteHeader() {
           className="flex items-center gap-2.5 font-semibold tracking-tight"
         >
           <span className="grid size-8 place-items-center rounded-full bg-stone-900 text-stone-50">
-            <GearIcon className="size-4" />
+            <PawIcon className="size-4" />
           </span>
           Slowbowl
         </Link>
