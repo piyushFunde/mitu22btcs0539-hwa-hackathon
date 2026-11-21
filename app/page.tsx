@@ -2,12 +2,6 @@ import Link from "next/link";
 import { ProductCard } from "@/components/product-card";
 import { formatPrice, products } from "@/lib/products";
 
-const stats = [
-  { value: "~3 hrs", label: "per wind" },
-  { value: "12", label: "treat chambers" },
-  { value: "0", label: "batteries needed" },
-];
-
 const marqueeItems = [
   "Slow feeding",
   "12 treat chambers",
@@ -60,22 +54,6 @@ export default function HomePage() {
             >
               Explore specs
             </Link>
-          </div>
-
-          <div className="mt-10 grid gap-3 sm:grid-cols-3">
-            {stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="rounded-2xl border border-amber-200 bg-amber-50 px-5 py-4 text-center"
-              >
-                <p className="text-2xl font-semibold text-amber-700">
-                  {stat.value}
-                </p>
-                <p className="mt-1 text-xs font-medium uppercase tracking-wide text-amber-800">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
