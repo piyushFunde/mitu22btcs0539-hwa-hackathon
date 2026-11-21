@@ -6,14 +6,22 @@ export const metadata: Metadata = {
   title: "Order confirmed",
 };
 
-export default function ConfirmationPage() {
+export default async function ConfirmationPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ orderId?: string | string[] }>;
+}) {
+  const params = await searchParams;
+  const orderId =
+    typeof params.orderId === "string" ? params.orderId : undefined;
+
   return (
     <div className="mx-auto max-w-2xl px-6 py-20 text-center">
       <div className="mx-auto grid size-14 place-items-center rounded-full bg-stone-900 text-stone-50">
         <CheckIcon className="size-6" />
       </div>
       <p className="mt-6 text-sm font-medium uppercase tracking-[0.2em] text-stone-500">
-        Order DT-2041
+        Order confirmed
       </p>
       <h1 className="mt-3 text-4xl font-semibold tracking-tight">
         You are all set.
@@ -22,6 +30,12 @@ export default function ConfirmationPage() {
         Thanks for shopping with Dog Tower. A confirmation is on its way to
         your inbox, and your order will ship within two business days.
       </p>
+      {orderId && (
+        <p className="mt-4 text-xs text-stone-500">
+          Order ID{" "}
+          <span className="break-all font-mono text-stone-700">{orderId}</span>
+        </p>
+      )}
       <div className="mt-8 flex flex-wrap justify-center gap-3">
         <Link
           href="/"
