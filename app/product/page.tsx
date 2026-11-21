@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 import { formatPrice, products } from "@/lib/products";
+import { HowItWorks } from "@/components/how-it-works";
 
 export const metadata: Metadata = {
   title: "Clockwork Forage Tower",
@@ -61,6 +62,8 @@ export default function ProductPage() {
           </p>
         </div>
       </div>
+
+      <HowItWorks />
     </div>
   );
 }
