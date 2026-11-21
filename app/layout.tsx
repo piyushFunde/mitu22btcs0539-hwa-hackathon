@@ -5,11 +5,11 @@ import { SiteFooter } from "@/components/site-footer";
 
 export const metadata: Metadata = {
   title: {
-    default: "Dog Tower — Everyday goods for good dogs",
+    default: "Dog Tower — Mealtime, slowed down",
     template: "%s · Dog Tower",
   },
   description:
-    "A small shop for thoughtful dog gear: beds, toys, and trail essentials.",
+    "The Clockwork Forage Tower: a wind-up dog puzzle that releases food in small doses over about three hours.",
 };
 
 export default function RootLayout({

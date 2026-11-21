@@ -4,7 +4,7 @@ import { formatPrice, products } from "@/lib/products";
 import { PawIcon } from "@/components/icons";
 
 export const metadata: Metadata = {
-  title: "The Tower Bed",
+  title: "Clockwork Forage Tower",
 };
 
 export default function ProductPage() {
@@ -50,7 +50,7 @@ export default function ProductPage() {
             Buy now
           </Link>
           <p className="mt-3 text-xs text-stone-500">
-            Free shipping on orders over $75.
+            Free shipping across India.
           </p>
         </div>
       </div>

@@ -9,53 +9,26 @@ export type Product = {
 
 export const products: Product[] = [
   {
-    slug: "tower-bed",
-    name: "The Tower Bed",
-    tagline: "A quiet place to land",
-    price: 129,
+    slug: "clockwork-forage-tower",
+    name: "Clockwork Forage Tower",
+    tagline: "A slow puzzle for busy noses",
+    price: 2499,
     description:
-      "A deep, bolstered bed with a removable, washable cover. The raised rim gives dogs something to lean into, and the low front makes it easy to step in.",
+      "A wind-up dog puzzle tower that hides a meal and hands it out slowly. Turn the key, set it down, and small amounts of kibble drop through the tower over about three hours — enough to keep a curious nose busy and make mealtime last.",
     details: [
-      "Orthopedic foam base with a soft bolster",
-      "Removable, machine-washable cover",
-      "Non-slip base for hardwood floors",
-      "Small, medium, and large sizes",
-    ],
-  },
-  {
-    slug: "rope-tug",
-    name: "Everyday Rope Tug",
-    tagline: "Built for the long game",
-    price: 24,
-    description:
-      "A chunky cotton rope with a knotted core that holds up to daily tugging. Machine washable, and it flosses teeth while it plays.",
-    details: [
-      "Natural cotton, no dyes",
-      "Reinforced center knot",
-      "Machine washable",
-      "Medium and large sizes",
-    ],
-  },
-  {
-    slug: "trail-bowl",
-    name: "Trail Bowl",
-    tagline: "Water, anywhere",
-    price: 38,
-    description:
-      "A collapsible silicone bowl that clips to a leash or pack. Wide enough to drink from, stable enough to leave on the ground.",
-    details: [
-      "Food-grade silicone",
-      "Collapses flat with a carabiner clip",
-      "Dishwasher safe",
-      "Holds 750 ml",
+      "Wind-up mechanism releases food over about 3 hours",
+      "Adjustable openings suit small or large kibble",
+      "Holds up to 2 cups of dry food",
+      "Wipe-clean base, no batteries",
     ],
   },
 ];
 
 export function formatPrice(value: number) {
-  return new Intl.NumberFormat("en-US", {
+  return new Intl.NumberFormat("en-IN", {
     style: "currency",
-    currency: "USD",
+    currency: "INR",
     minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
   }).format(value);
 }

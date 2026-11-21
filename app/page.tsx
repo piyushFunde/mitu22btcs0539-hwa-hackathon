@@ -10,11 +10,12 @@ export default function HomePage() {
           Dog Tower
         </p>
         <h1 className="mt-4 max-w-2xl text-4xl font-semibold tracking-tight sm:text-6xl">
-          Everyday goods for good dogs.
+          Mealtime, slowed down.
         </h1>
         <p className="mt-5 max-w-xl text-lg leading-relaxed text-stone-600">
-          Beds, toys, and trail gear built for the dogs who make our days
-          better. Small batch, honest materials, no fuss.
+          The Clockwork Forage Tower is a wind-up puzzle that releases your
+          dog&apos;s food in small doses over about three hours. No batteries,
+          no fuss — just a nose, a puzzle, and a little patience.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Link
@@ -36,13 +37,13 @@ export default function HomePage() {
         <div className="mx-auto max-w-5xl px-6 py-14">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <h2 className="text-2xl font-semibold tracking-tight">
-              The collection
+              The shop
             </h2>
             <p className="text-sm text-stone-500">
-              Three things we would buy ourselves.
+              One product, made properly.
             </p>
           </div>
-          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid max-w-sm gap-5">
             {products.map((product) => (
               <ProductCard key={product.slug} product={product} />
             ))}
