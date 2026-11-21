@@ -5,8 +5,8 @@ import { SiteFooter } from "@/components/site-footer";
 
 export const metadata: Metadata = {
   title: {
-    default: "Dog Tower — Mealtime, slowed down",
-    template: "%s · Dog Tower",
+    default: "Slowbowl — Mealtime, slowed down",
+    template: "%s · Slowbowl",
   },
   description:
     "The Clockwork Forage Tower: a wind-up dog puzzle that releases food in small doses over about three hours.",

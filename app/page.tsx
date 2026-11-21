@@ -7,7 +7,7 @@ export default function HomePage() {
     <div>
       <section className="mx-auto max-w-5xl px-6 pb-14 pt-16 sm:pt-24">
         <p className="text-sm font-medium uppercase tracking-[0.2em] text-stone-500">
-          Dog Tower
+          Slowbowl
         </p>
         <h1 className="mt-4 max-w-2xl text-4xl font-semibold tracking-tight sm:text-6xl">
           Mealtime, slowed down.

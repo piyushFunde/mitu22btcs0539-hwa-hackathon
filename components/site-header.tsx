@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { GearIcon } from "@/components/icons";
 
 export function SiteHeader() {
   return (
@@ -8,10 +9,10 @@ export function SiteHeader() {
           href="/"
           className="flex items-center gap-2.5 font-semibold tracking-tight"
         >
-          <span className="grid size-8 place-items-center rounded-full bg-stone-900 text-xs text-stone-50">
-            DT
+          <span className="grid size-8 place-items-center rounded-full bg-stone-900 text-stone-50">
+            <GearIcon className="size-4" />
           </span>
-          Dog Tower
+          Slowbowl
         </Link>
         <nav className="flex items-center gap-5 text-sm text-stone-600">
           <Link href="/" className="transition hover:text-stone-900">

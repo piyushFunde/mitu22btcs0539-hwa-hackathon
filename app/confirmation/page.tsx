@@ -32,7 +32,7 @@ export default async function ConfirmationPage({
         </p>
       )}
       <p className="mt-4 leading-relaxed text-stone-600">
-        Thanks for shopping with Dog Tower. A confirmation is on its way to
+        Thanks for shopping with Slowbowl. A confirmation is on its way to
         your inbox, and your order will ship within two business days.
       </p>
       <div className="mt-8 flex flex-wrap justify-center gap-3">
