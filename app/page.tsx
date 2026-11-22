@@ -15,6 +15,25 @@ const rays = [-120, 200, 400, 600, 800, 1120];
 
 const avatarVariants = ["tan", "brown", "cream"] as const;
 
+const dogBehaviours = [
+  {
+    title: "Scratched Doors",
+    body: "Checking exits and pacing out of restlessness, searching for a task.",
+  },
+  {
+    title: "Chewed Shoes & Trim",
+    body: "Chewing triggers endorphins to soothe an under-stimulated brain.",
+  },
+  {
+    title: "Dug-up Cushions",
+    body: "Recreating natural foraging instincts on carpets and couches.",
+  },
+  {
+    title: "Alert Barking",
+    body: "Reacting to hallway footsteps because the mind had zero focused work.",
+  },
+];
+
 function StencilWord({ text }: { text: string }) {
   return (
     <span aria-hidden="true" className="inline-flex gap-[0.25em]">
@@ -143,6 +162,38 @@ export default function HomePage() {
               ))}
             </div>
           ))}
+        </div>
+      </section>
+
+      <section
+        aria-label="What does your dog do all day?"
+        className="mx-4 rounded-[36px] border border-ink/10 bg-white px-6 py-14"
+      >
+        <div className="mx-auto max-w-5xl">
+          <p className="text-xs font-medium uppercase tracking-widest text-plum">
+            The 6-hour gap
+          </p>
+          <h2 className="mt-3 text-3xl font-semibold text-ink sm:text-4xl">
+            What does your dog do while you&apos;re away?
+          </h2>
+          <p className="mt-4 max-w-2xl leading-relaxed text-plum">
+            Dogs are wired to search, sniff, and work for their food. When a
+            bowl is emptied in 30 seconds, a dog has hours of mental energy left
+            over — and a bored dog creates its own entertainment.
+          </p>
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {dogBehaviours.map((behaviour) => (
+              <div
+                key={behaviour.title}
+                className="rounded-2xl border border-ink/10 bg-mist/50 p-5"
+              >
+                <h3 className="font-semibold text-ink">{behaviour.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-plum">
+                  {behaviour.body}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
