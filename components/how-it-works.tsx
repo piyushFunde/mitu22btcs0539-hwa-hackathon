@@ -1,6 +1,9 @@
 export function HowItWorks() {
   return (
-    <section className="mt-16 border-t border-ink/10 pt-14">
+    <section
+      id="how-it-works"
+      className="mt-16 scroll-mt-24 border-t border-ink/10 pt-14"
+    >
       <h2 className="text-2xl font-semibold tracking-tight">How it works</h2>
       <p className="mt-2 max-w-xl text-plum">
         Wind it up, load it, and let your dog work for dinner.
@@ -49,7 +52,7 @@ export function HowItWorks() {
           </ul>
         </div>
 
-        <div>
+        <div id="faqs" className="scroll-mt-24">
           <h3 className="text-lg font-semibold tracking-tight">FAQs</h3>
           <div className="mt-4 divide-y divide-ink/10 rounded-2xl border border-ink/10 bg-white">
             <Faq
