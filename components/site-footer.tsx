@@ -24,30 +24,30 @@ const safetyItems = [
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-ink/10 bg-white/70 px-6 py-14 backdrop-blur">
+    <footer className="border-t border-white/10 bg-[#20263e] px-6 py-14">
       <div className="mx-auto max-w-5xl">
         <div className="grid grid-cols-1 gap-8 text-sm md:grid-cols-4">
           <div>
             <Link
               href="/"
-              className="flex items-center gap-2.5 text-lg font-semibold text-ink"
+              className="flex items-center gap-2.5 text-lg font-semibold text-white"
             >
-              <span className="grid size-8 place-items-center rounded-full bg-deep-plum text-white">
+              <span className="grid size-8 place-items-center rounded-full bg-white/10 text-white">
                 <PawIcon className="size-4" />
               </span>
               Slowbowl
             </Link>
-            <p className="mt-4 leading-relaxed text-plum">
+            <p className="mt-4 leading-relaxed text-[#CDBFD3]">
               Thoughtful mechanical dog enrichment. Built to turn mealtime into
               hours of calm, focused foraging without batteries, wires or Wi-Fi.
             </p>
-            <span className="mt-5 inline-flex rounded-full border border-ink/10 bg-mist px-3 py-1 text-xs text-plum">
+            <span className="mt-5 inline-flex rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs text-[#CDBFD3]">
               Crafted for Hack While Away 2026
             </span>
           </div>
 
           <div>
-            <h3 className="text-xs font-medium uppercase tracking-wider text-ink">
+            <h3 className="text-xs font-medium uppercase tracking-wider text-white">
               Product
             </h3>
             <ul className="mt-4 space-y-2.5">
@@ -55,7 +55,7 @@ export function SiteFooter() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-plum transition hover:text-ink"
+                    className="text-[#CDBFD3] transition hover:text-white"
                   >
                     {link.label}
                   </Link>
@@ -65,7 +65,7 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h3 className="text-xs font-medium uppercase tracking-wider text-ink">
+            <h3 className="text-xs font-medium uppercase tracking-wider text-white">
               Customer care
             </h3>
             <ul className="mt-4 space-y-2.5">
@@ -73,7 +73,7 @@ export function SiteFooter() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-plum transition hover:text-ink"
+                    className="text-[#CDBFD3] transition hover:text-white"
                   >
                     {link.label}
                   </Link>
@@ -83,10 +83,10 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h3 className="text-xs font-medium uppercase tracking-wider text-ink">
+            <h3 className="text-xs font-medium uppercase tracking-wider text-white">
               Safety &amp; Legal
             </h3>
-            <ul className="mt-4 space-y-2 text-xs leading-relaxed text-plum/80">
+            <ul className="mt-4 space-y-2 text-xs leading-relaxed text-[#CDBFD3]/80">
               {safetyItems.map((item) => (
                 <li key={item}>{item}</li>
               ))}
@@ -94,7 +94,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-ink/10 pt-6 text-xs text-plum/60 sm:flex-row">
+        <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs text-[#CDBFD3]/60 sm:flex-row">
           <p>© {new Date().getFullYear()} Slowbowl. All rights reserved.</p>
           <p>Battery-free by design.</p>
         </div>
