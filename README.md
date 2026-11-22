@@ -68,6 +68,80 @@ Processes order requests and generates a unique tracking reference.
 Content-Type: application/json
 ```
 ---
-## Application Architecture & Flow
 
+## Application Architecture & Flow
+```
+flowchart TD
+
+subgraph group_storefront["Storefront"]
+  node_home["Home page<br/>[page.tsx]"]
+  node_product["Product page<br/>[page.tsx]"]
+  node_product_guide["Use and safety guide<br/>[how-it-works.tsx]"]
+  node_catalog["Product catalog<br/>[products.ts]"]
+  node_dog_avatar["Dog avatars<br/>[dog-avatar.tsx]"]
+end
+
+subgraph group_ordering["Order flow"]
+  node_checkout["Checkout form<br/>[page.tsx]"]
+  node_order_api["Order endpoint<br/>[route.ts]"]
+  node_confirmation["Order confirmation<br/>[page.tsx]"]
+end
+
+subgraph group_shared["Shared experience"]
+  node_app_shell["App layout<br/>[layout.tsx]"]
+  node_header["Site header<br/>[site-header.tsx]"]
+  node_footer["Site footer<br/>[site-footer.tsx]"]
+  node_legal["Legal modal<br/>[footer-legal.tsx]"]
+  node_icons["Shared icons<br/>[icons.tsx]"]
+  node_motion["Motion behavior<br/>[motion.tsx]"]
+end
+
+node_shopper(("Shopper"))
+
+node_shopper -->|"browses"| node_home
+node_home -->|"reads product"| node_catalog
+node_home -->|"renders"| node_dog_avatar
+node_home -->|"links to"| node_product
+node_product -->|"reads product"| node_catalog
+node_product -->|"renders"| node_product_guide
+node_product -->|"links to"| node_checkout
+node_shopper -->|"enters order"| node_checkout
+node_checkout -->|"reads product"| node_catalog
+node_checkout -->|"submits order"| node_order_api
+node_checkout -->|"routes on success"| node_confirmation
+node_app_shell -->|"renders"| node_header
+node_app_shell -->|"renders"| node_footer
+node_app_shell -->|"renders"| node_motion
+node_footer -->|"renders"| node_legal
+node_footer -->|"uses"| node_icons
+node_header -->|"uses"| node_icons
+node_confirmation -->|"uses"| node_icons
+
+click node_home "https://github.com/piyushfunde/mitu22btcs0539-hwa-hackathon/blob/main/app/page.tsx"
+click node_product "https://github.com/piyushfunde/mitu22btcs0539-hwa-hackathon/blob/main/app/product/page.tsx"
+click node_product_guide "https://github.com/piyushfunde/mitu22btcs0539-hwa-hackathon/blob/main/components/how-it-works.tsx"
+click node_catalog "https://github.com/piyushfunde/mitu22btcs0539-hwa-hackathon/blob/main/lib/products.ts"
+click node_dog_avatar "https://github.com/piyushfunde/mitu22btcs0539-hwa-hackathon/blob/main/components/dog-avatar.tsx"
+click node_checkout "https://github.com/piyushfunde/mitu22btcs0539-hwa-hackathon/blob/main/app/checkout/page.tsx"
+click node_order_api "https://github.com/piyushfunde/mitu22btcs0539-hwa-hackathon/blob/main/app/api/order/route.ts"
+click node_confirmation "https://github.com/piyushfunde/mitu22btcs0539-hwa-hackathon/blob/main/app/confirmation/page.tsx"
+click node_app_shell "https://github.com/piyushfunde/mitu22btcs0539-hwa-hackathon/blob/main/app/layout.tsx"
+click node_header "https://github.com/piyushfunde/mitu22btcs0539-hwa-hackathon/blob/main/components/site-header.tsx"
+click node_footer "https://github.com/piyushfunde/mitu22btcs0539-hwa-hackathon/blob/main/components/site-footer.tsx"
+click node_legal "https://github.com/piyushfunde/mitu22btcs0539-hwa-hackathon/blob/main/components/footer-legal.tsx"
+click node_icons "https://github.com/piyushfunde/mitu22btcs0539-hwa-hackathon/blob/main/components/icons.tsx"
+click node_motion "https://github.com/piyushfunde/mitu22btcs0539-hwa-hackathon/blob/main/components/motion.tsx"
+
+classDef toneNeutral fill:#f8fafc,stroke:#334155,stroke-width:1.5px,color:#0f172a
+classDef toneBlue fill:#dbeafe,stroke:#2563eb,stroke-width:1.5px,color:#172554
+classDef toneAmber fill:#fef3c7,stroke:#d97706,stroke-width:1.5px,color:#78350f
+classDef toneMint fill:#dcfce7,stroke:#16a34a,stroke-width:1.5px,color:#14532d
+classDef toneRose fill:#ffe4e6,stroke:#e11d48,stroke-width:1.5px,color:#881337
+classDef toneIndigo fill:#e0e7ff,stroke:#4f46e5,stroke-width:1.5px,color:#312e81
+classDef toneTeal fill:#ccfbf1,stroke:#0f766e,stroke-width:1.5px,color:#134e4a
+class node_home,node_product,node_product_guide,node_catalog,node_dog_avatar toneBlue
+class node_checkout,node_order_api,node_confirmation toneAmber
+class node_app_shell,node_header,node_footer,node_legal,node_icons,node_motion toneMint
+class node_shopper toneIndigo
+```
 The web store is built as a focused, high-conversion direct-to-consumer experience:
