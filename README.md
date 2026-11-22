@@ -70,7 +70,7 @@ Content-Type: application/json
 ---
 
 ## Application Architecture & Flow
-```
+```mermaid
 flowchart TD
 
 subgraph group_storefront["Storefront"]
@@ -143,5 +143,6 @@ class node_home,node_product,node_product_guide,node_catalog,node_dog_avatar ton
 class node_checkout,node_order_api,node_confirmation toneAmber
 class node_app_shell,node_header,node_footer,node_legal,node_icons,node_motion toneMint
 class node_shopper toneIndigo
+
 ```
 The web store is built as a focused, high-conversion direct-to-consumer experience:
