@@ -8,7 +8,10 @@ export function ProductCard({ product }: { product: Product }) {
       href="/product"
       className="group flex flex-col rounded-2xl border border-ink/10 bg-white p-3 transition hover:border-ink/20 hover:shadow-sm"
     >
-      <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-soft-plum">
+      <div
+        data-reveal
+        className="venetian relative aspect-[4/3] overflow-hidden rounded-xl bg-soft-plum"
+      >
         <Image
           src="/tower-hero.png"
           alt={product.name}

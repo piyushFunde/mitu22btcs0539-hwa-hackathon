@@ -3,6 +3,7 @@ import { Archivo } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { Motion } from "@/components/motion";
 
 const archivo = Archivo({
   subsets: ["latin"],
@@ -29,6 +30,10 @@ export default function RootLayout({
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />
+        <Motion />
+        <noscript>
+          <style>{`.venetian{-webkit-mask-image:none!important;mask-image:none!important;}`}</style>
+        </noscript>
       </body>
     </html>
   );

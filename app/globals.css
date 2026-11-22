@@ -12,10 +12,6 @@
   color-scheme: light;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 .stencil-letter {
   display: inline-block;
   -webkit-mask-image: linear-gradient(
@@ -38,6 +34,39 @@ html {
   );
 }
 
+@property --stripe {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+
+.venetian {
+  --stripe: 0px;
+  -webkit-mask-image: repeating-linear-gradient(
+    to bottom,
+    #000 0 var(--stripe),
+    transparent var(--stripe) 40px
+  );
+  mask-image: repeating-linear-gradient(
+    to bottom,
+    #000 0 var(--stripe),
+    transparent var(--stripe) 40px
+  );
+}
+
+.venetian.is-revealed {
+  animation: venetian-reveal 500ms ease-out forwards;
+}
+
+@keyframes venetian-reveal {
+  from {
+    --stripe: 0px;
+  }
+  to {
+    --stripe: 40px;
+  }
+}
+
 @keyframes marquee {
   from {
     transform: translateX(0);
@@ -54,5 +83,10 @@ html {
 @media (prefers-reduced-motion: reduce) {
   .animate-marquee {
     animation: none;
+  }
+
+  .venetian {
+    -webkit-mask-image: none;
+    mask-image: none;
   }
 }

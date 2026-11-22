@@ -121,7 +121,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mx-4 overflow-hidden rounded-[36px] border border-ink/10 bg-soft-plum py-4">
+      <section
+        data-reveal
+        className="venetian mx-4 overflow-hidden rounded-[36px] border border-ink/10 bg-soft-plum py-4"
+      >
         <div className="flex w-max animate-marquee">
           {[0, 1].map((group) => (
             <div
