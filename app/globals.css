@@ -38,16 +38,7 @@ html {
   );
 }
 
-@keyframes marquee-right {
-  from {
-    transform: translateX(-50%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-
-@keyframes marquee-left {
+@keyframes marquee {
   from {
     transform: translateX(0);
   }
@@ -56,32 +47,12 @@ html {
   }
 }
 
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
-.marquee-right {
-  animation: marquee-right 120s linear infinite;
-}
-
-.marquee-left {
-  animation: marquee-left 140s linear infinite;
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
+.animate-marquee {
+  animation: marquee 30s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .marquee-right,
-  .marquee-left,
-  .animate-float {
+  .animate-marquee {
     animation: none;
   }
 }
