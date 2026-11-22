@@ -2,9 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const legalLinkClass =
-  "cursor-pointer text-[#CDBFD3] transition underline-offset-4 hover:text-white hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#CDBFD3]";
-
 export function FooterLegal() {
   const [open, setOpen] = useState(false);
   const closeRef = useRef<HTMLButtonElement>(null);
@@ -41,24 +38,14 @@ export function FooterLegal() {
   }, [open]);
 
   return (
-    <div>
-      <h3 className="text-xs font-medium uppercase tracking-wider text-white">
-        Safety &amp; Legal
-      </h3>
-      <ul className="mt-4 space-y-2 text-xs leading-relaxed text-[#CDBFD3]/80">
-        <li>BPA-Free &amp; Food-Grade Silicone</li>
-        <li>Supervised Play Advisory</li>
-        <li>
-          <button type="button" onClick={openModal} className={legalLinkClass}>
-            Privacy Policy
-          </button>
-        </li>
-        <li>
-          <button type="button" onClick={openModal} className={legalLinkClass}>
-            Terms of Service
-          </button>
-        </li>
-      </ul>
+    <>
+      <button
+        type="button"
+        onClick={openModal}
+        className="text-sm text-plum transition hover:text-ink"
+      >
+        Privacy and Terms
+      </button>
 
       {open && (
         <div
@@ -123,6 +110,6 @@ export function FooterLegal() {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 }

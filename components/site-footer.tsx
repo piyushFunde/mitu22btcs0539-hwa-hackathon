@@ -2,86 +2,59 @@ import Link from "next/link";
 import { FooterLegal } from "@/components/footer-legal";
 import { PawIcon } from "@/components/icons";
 
-const productLinks = [
-  { label: "Clockwork Forage Tower", href: "/product" },
-  { label: "How The Escapement Works", href: "/product#how-it-works" },
-  { label: "Replacement Parts & Lids", href: "/product" },
-  { label: "Sizing & Breed Guide", href: "/product" },
-];
-
-const careLinks = [
-  { label: "Free Shipping Across India", href: "/product" },
-  { label: "Dishwasher Cleaning Guide", href: "/product" },
-  { label: "FAQ & Returns", href: "/product#faqs" },
-  { label: "Contact: support@slowbowl.dev", href: "mailto:support@slowbowl.dev" },
+const footerLinks = [
+  { label: "Product", href: "/product" },
+  { label: "How It Works", href: "/product#how-it-works" },
+  { label: "Safety & Limits", href: "/product#how-it-works" },
+  { label: "Checkout", href: "/checkout" },
 ];
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-white/10 bg-[#20263e] px-6 py-14">
+    <footer className="border-t border-ink/10 bg-white/60 px-6 backdrop-blur">
       <div className="mx-auto max-w-5xl">
-        <div className="grid grid-cols-1 gap-8 text-sm md:grid-cols-4">
-          <div>
+        <div className="flex flex-col items-center justify-between gap-6 border-b border-ink/10 py-6 md:flex-row">
+          <div className="flex flex-wrap items-center justify-center gap-3 md:justify-start">
             <Link
               href="/"
-              className="flex items-center gap-2.5 text-lg font-semibold text-white"
+              className="flex items-center gap-2 font-semibold text-ink"
             >
-              <span className="grid size-8 place-items-center rounded-full bg-white/10 text-white">
-                <PawIcon className="size-4" />
+              <span className="grid size-7 place-items-center rounded-full bg-deep-plum text-white">
+                <PawIcon className="size-3.5" />
               </span>
               Slowbowl
             </Link>
-            <p className="mt-4 leading-relaxed text-[#CDBFD3]">
-              Thoughtful mechanical dog enrichment. Built to turn mealtime into
-              hours of calm, focused foraging without batteries, wires or Wi-Fi.
-            </p>
-            <span className="mt-5 inline-flex rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs text-[#CDBFD3]">
-              Crafted for Hack While Away 2026
+            <span className="text-xs font-medium uppercase tracking-wider text-plum">
+              100% Mechanical · Zero Batteries
             </span>
           </div>
 
-          <div>
-            <h3 className="text-xs font-medium uppercase tracking-wider text-white">
-              Product
-            </h3>
-            <ul className="mt-4 space-y-2.5">
-              {productLinks.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-[#CDBFD3] transition hover:text-white"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-xs font-medium uppercase tracking-wider text-white">
-              Customer care
-            </h3>
-            <ul className="mt-4 space-y-2.5">
-              {careLinks.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-[#CDBFD3] transition hover:text-white"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <FooterLegal />
+          <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm">
+            {footerLinks.map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                className="text-plum transition hover:text-ink"
+              >
+                {link.label}
+              </Link>
+            ))}
+            <FooterLegal />
+          </nav>
         </div>
 
-        <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs text-[#CDBFD3]/60 sm:flex-row">
-          <p>© {new Date().getFullYear()} Slowbowl. All rights reserved.</p>
-          <p>Battery-free by design.</p>
+        <div className="flex flex-col items-center justify-between gap-3 pt-6 pb-8 text-xs text-plum/60 sm:flex-row">
+          <p>
+            © {new Date().getFullYear()} Slowbowl · Designed for Hack While Away
+            2026
+          </p>
+          <a
+            href="mailto:support@slowbowl.com"
+            className="transition hover:text-plum"
+          >
+            support@slowbowl.com
+          </a>
+          <p>Simulated checkout sandbox · No real transaction</p>
         </div>
       </div>
     </footer>
