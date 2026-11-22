@@ -113,21 +113,6 @@ export default function HomePage() {
             over about three hours. Just a nose, a puzzle, and a little
             patience.
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link
-              href="/checkout"
-              className="rounded-full bg-deep-plum px-6 py-3 text-sm font-medium uppercase tracking-wide text-white transition hover:bg-ink"
-            >
-              Shop now — {formatPrice(product.price)}
-            </Link>
-            <Link
-              href="/product"
-              className="rounded-full border border-ink/15 bg-white px-6 py-3 text-sm font-medium uppercase tracking-wide text-ink transition hover:bg-soft-plum"
-            >
-              Explore specs
-            </Link>
-          </div>
-
           <div className="mt-10 flex items-center gap-4">
             <div className="flex shrink-0 -space-x-3">
               {avatarVariants.map((variant) => (
@@ -206,7 +191,11 @@ export default function HomePage() {
 
       <section className="mx-4 overflow-hidden rounded-[36px] border border-ink/10 bg-soft-plum">
         <div className="mx-auto max-w-5xl px-6 py-14">
-          <div className="grid items-center gap-10 lg:grid-cols-2">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <h2 className="text-2xl font-semibold tracking-tight">Product</h2>
+            <p className="text-sm text-plum">The Clockwork Forage Tower</p>
+          </div>
+          <div className="mt-8 grid items-center gap-10 lg:grid-cols-2">
             <div
               data-reveal
               className="venetian relative aspect-square overflow-hidden rounded-3xl bg-white"
@@ -224,9 +213,9 @@ export default function HomePage() {
               <p className="text-xs font-medium uppercase tracking-[0.2em] text-plum">
                 Mechanical enrichment
               </p>
-              <h2 className="mt-3 text-3xl font-bold text-ink">
+              <h3 className="mt-3 text-3xl font-bold text-ink">
                 {product.name}
-              </h2>
+              </h3>
               <p className="mt-3 text-2xl font-semibold text-ink">
                 {formatPrice(product.price)}
               </p>
@@ -246,10 +235,10 @@ export default function HomePage() {
                 ))}
               </ul>
               <Link
-                href="/checkout"
+                href="/product"
                 className="mt-8 inline-flex rounded-full bg-deep-plum px-6 py-3 text-sm font-medium uppercase tracking-wide text-white transition hover:bg-ink"
               >
-                Shop now — {formatPrice(product.price)}
+                Explore more
               </Link>
               <p className="mt-3 text-xs text-plum">
                 Free shipping across India · 100% battery-free
