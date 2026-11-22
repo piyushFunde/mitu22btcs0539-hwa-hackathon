@@ -43,7 +43,7 @@ export function FooterLegal() {
       <button
         type="button"
         onClick={openModal}
-        className="text-sm text-plum transition hover:text-ink"
+        className="text-sm text-[#CDBFD3] transition hover:text-white"
       >
         Privacy and Terms
       </button>

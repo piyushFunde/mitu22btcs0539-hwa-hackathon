@@ -11,20 +11,20 @@ const footerLinks = [
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-ink/10 bg-white/60 px-6 backdrop-blur">
+    <footer className="border-t border-white/10 bg-[#20263e] px-6">
       <div className="mx-auto max-w-5xl">
-        <div className="flex flex-col items-center justify-between gap-6 border-b border-ink/10 py-6 md:flex-row">
+        <div className="flex flex-col items-center justify-between gap-6 border-b border-white/10 py-6 md:flex-row">
           <div className="flex flex-wrap items-center justify-center gap-3 md:justify-start">
             <Link
               href="/"
-              className="flex items-center gap-2 font-semibold text-ink"
+              className="flex items-center gap-2 font-semibold text-white"
             >
-              <span className="grid size-7 place-items-center rounded-full bg-deep-plum text-white">
+              <span className="grid size-7 place-items-center rounded-full bg-white/10 text-white">
                 <PawIcon className="size-3.5" />
               </span>
               Slowbowl
             </Link>
-            <span className="text-xs font-medium uppercase tracking-wider text-plum">
+            <span className="text-xs font-medium uppercase tracking-wider text-[#CDBFD3]">
               100% Mechanical · Zero Batteries
             </span>
           </div>
@@ -34,7 +34,7 @@ export function SiteFooter() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-plum transition hover:text-ink"
+                className="text-[#CDBFD3] transition hover:text-white"
               >
                 {link.label}
               </Link>
@@ -43,14 +43,14 @@ export function SiteFooter() {
           </nav>
         </div>
 
-        <div className="flex flex-col items-center justify-between gap-3 pt-6 pb-8 text-xs text-plum/60 sm:flex-row">
+        <div className="flex flex-col items-center justify-between gap-3 pt-6 pb-8 text-xs text-[#CDBFD3]/60 sm:flex-row">
           <p>
             © {new Date().getFullYear()} Slowbowl · Designed for Hack While Away
             2026
           </p>
           <a
             href="mailto:support@slowbowl.com"
-            className="transition hover:text-plum"
+            className="transition hover:text-white"
           >
             support@slowbowl.com
           </a>
