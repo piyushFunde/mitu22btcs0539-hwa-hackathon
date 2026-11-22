@@ -1,6 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
 import { DogAvatar } from "@/components/dog-avatar";
-import { ProductCard } from "@/components/product-card";
 import { formatPrice, products } from "@/lib/products";
 
 const marqueeItems = [
@@ -14,6 +14,13 @@ const marqueeItems = [
 const rays = [-120, 200, 400, 600, 800, 1120];
 
 const avatarVariants = ["tan", "brown", "cream"] as const;
+
+const productSpecs = [
+  "~3 hours Mechanical Run",
+  "12 Treat Chambers",
+  "Dishwasher Safe Rings",
+  "Medium & Large Dogs",
+];
 
 const dogBehaviours = [
   {
@@ -199,16 +206,55 @@ export default function HomePage() {
 
       <section className="mx-4 overflow-hidden rounded-[36px] border border-ink/10 bg-soft-plum">
         <div className="mx-auto max-w-5xl px-6 py-14">
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <h2 className="text-2xl font-semibold tracking-tight">
-              The shop
-            </h2>
-            <p className="text-sm text-plum">One product, made properly.</p>
-          </div>
-          <div className="mt-8 grid max-w-sm gap-5">
-            {products.map((product) => (
-              <ProductCard key={product.slug} product={product} />
-            ))}
+          <div className="grid items-center gap-10 lg:grid-cols-2">
+            <div
+              data-reveal
+              className="venetian relative aspect-square overflow-hidden rounded-3xl bg-white"
+            >
+              <Image
+                src="/tower-hero.png"
+                alt={product.name}
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+
+            <div>
+              <p className="text-xs font-medium uppercase tracking-[0.2em] text-plum">
+                Mechanical enrichment
+              </p>
+              <h2 className="mt-3 text-3xl font-bold text-ink">
+                {product.name}
+              </h2>
+              <p className="mt-3 text-2xl font-semibold text-ink">
+                {formatPrice(product.price)}
+              </p>
+              <p className="mt-5 leading-relaxed text-plum">
+                A stackable 4-ring mechanical puzzle that dispenses meals over
+                roughly 3 hours. Features nudge, flip, slide, and lift lids.
+                100% mechanical escapement — no batteries, no screens.
+              </p>
+              <ul className="mt-6 flex flex-wrap gap-2">
+                {productSpecs.map((spec) => (
+                  <li
+                    key={spec}
+                    className="rounded-full border border-ink/10 bg-white px-3 py-1.5 text-xs font-medium text-plum"
+                  >
+                    {spec}
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href="/checkout"
+                className="mt-8 inline-flex rounded-full bg-deep-plum px-6 py-3 text-sm font-medium uppercase tracking-wide text-white transition hover:bg-ink"
+              >
+                Shop now — {formatPrice(product.price)}
+              </Link>
+              <p className="mt-3 text-xs text-plum">
+                Free shipping across India · 100% battery-free
+              </p>
+            </div>
           </div>
         </div>
       </section>
