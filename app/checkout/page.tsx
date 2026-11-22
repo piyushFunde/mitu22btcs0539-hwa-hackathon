@@ -87,7 +87,7 @@ export default function CheckoutPage() {
                 label="Full name"
                 name="name"
                 autoComplete="name"
-                placeholder="Riley Chen"
+                placeholder="Enter Your Name"
                 error={errors.name}
               />
               <Field
@@ -95,7 +95,7 @@ export default function CheckoutPage() {
                 name="email"
                 type="email"
                 autoComplete="email"
-                placeholder="riley@example.com"
+                placeholder="Enter Your Email"
                 error={errors.email}
               />
               <Field
