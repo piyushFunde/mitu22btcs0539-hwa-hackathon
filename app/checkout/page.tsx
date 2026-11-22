@@ -184,51 +184,54 @@ export default function CheckoutPage() {
             <p>{formatPrice(product.price)}</p>
           </div>
 
-          <div className="mt-6 border-t border-ink/10 pt-4">
-            <label htmlFor="quantity" className="text-sm font-medium">
-              Quantity
-            </label>
-            <div
-              className={
-                "mt-1.5 inline-flex items-stretch overflow-hidden rounded-xl border bg-white " +
-                (errors.quantity ? "border-red-400" : "border-ink/15")
-              }
-            >
-              <button
-                type="button"
-                aria-label="Decrease quantity"
-                onClick={() =>
-                  setQuantity(String(Math.max(1, displayQuantity - 1)))
-                }
-                disabled={displayQuantity <= 1}
-                className="grid w-10 place-items-center text-lg text-ink transition hover:bg-soft-plum disabled:cursor-not-allowed disabled:text-plum/30"
+          <div className="mt-6 border-t border-ink/10 py-3">
+            <div className="flex items-center justify-between">
+              <label
+                htmlFor="quantity"
+                className="text-sm font-medium text-ink"
               >
-                -
-              </button>
-              <input
-                id="quantity"
-                name="quantity"
-                type="number"
-                min={1}
-                max={10}
-                value={quantity}
-                onChange={(event) => setQuantity(event.target.value)}
+                Quantity
+              </label>
+              <div
                 className={
-                  "w-14 border-x bg-white py-2.5 text-center text-sm text-ink outline-none [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none " +
-                  (errors.quantity ? "border-red-300" : "border-ink/15")
+                  "inline-flex items-center rounded-full border bg-white p-0.5 shadow-xs " +
+                  (errors.quantity ? "border-red-400" : "border-ink/15")
                 }
-              />
-              <button
-                type="button"
-                aria-label="Increase quantity"
-                onClick={() =>
-                  setQuantity(String(Math.min(10, displayQuantity + 1)))
-                }
-                disabled={displayQuantity >= 10}
-                className="grid w-10 place-items-center text-lg text-ink transition hover:bg-soft-plum disabled:cursor-not-allowed disabled:text-plum/30"
               >
-                +
-              </button>
+                <button
+                  type="button"
+                  aria-label="Decrease quantity"
+                  onClick={() =>
+                    setQuantity(String(Math.max(1, displayQuantity - 1)))
+                  }
+                  disabled={displayQuantity <= 1}
+                  className="flex h-8 w-8 items-center justify-center rounded-full text-base font-semibold text-ink transition hover:bg-soft-plum disabled:cursor-not-allowed disabled:opacity-30"
+                >
+                  −
+                </button>
+                <input
+                  id="quantity"
+                  name="quantity"
+                  type="number"
+                  min={1}
+                  max={10}
+                  value={quantity}
+                  onChange={(event) => setQuantity(event.target.value)}
+                  aria-invalid={Boolean(errors.quantity)}
+                  className="w-10 select-none bg-transparent text-center font-mono text-sm font-medium text-ink outline-none [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+                />
+                <button
+                  type="button"
+                  aria-label="Increase quantity"
+                  onClick={() =>
+                    setQuantity(String(Math.min(10, displayQuantity + 1)))
+                  }
+                  disabled={displayQuantity >= 10}
+                  className="flex h-8 w-8 items-center justify-center rounded-full text-base font-semibold text-ink transition hover:bg-soft-plum disabled:cursor-not-allowed disabled:opacity-30"
+                >
+                  +
+                </button>
+              </div>
             </div>
             {errors.quantity && (
               <p className="mt-1.5 text-xs text-red-600">{errors.quantity}</p>
