@@ -1,15 +1,8 @@
 import Link from "next/link";
 import { DogAvatar } from "@/components/dog-avatar";
+import { FeatureMarquee } from "@/components/feature-marquee";
 import { ProductCard } from "@/components/product-card";
 import { formatPrice, products } from "@/lib/products";
-
-const marqueeItems = [
-  "Slow feeding",
-  "12 treat chambers",
-  "~3 hours per wind",
-  "No batteries",
-  "Medium & large dogs",
-];
 
 const rays = [-120, 200, 400, 600, 800, 1120];
 
@@ -121,27 +114,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mx-4 overflow-hidden rounded-[36px] border border-ink/10 bg-soft-plum py-4">
-        <div className="flex w-max animate-marquee">
-          {[0, 1].map((group) => (
-            <div
-              key={group}
-              className="flex shrink-0 items-center"
-              aria-hidden={group === 1}
-            >
-              {marqueeItems.map((item) => (
-                <span
-                  key={item}
-                  className="flex items-center whitespace-nowrap text-xs font-medium uppercase tracking-[0.25em] text-plum"
-                >
-                  <span className="px-6">{item}</span>
-                  <span aria-hidden="true">·</span>
-                </span>
-              ))}
-            </div>
-          ))}
-        </div>
-      </section>
+      <FeatureMarquee />
 
       <section className="mx-4 overflow-hidden rounded-[36px] border border-ink/10 bg-soft-plum">
         <div className="mx-auto max-w-5xl px-6 py-14">

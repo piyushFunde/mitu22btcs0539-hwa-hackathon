@@ -16,7 +16,7 @@ export function SiteHeader() {
         </Link>
         <nav className="flex items-center gap-5 text-sm text-ink">
           <Link href="/" className="transition hover:text-plum">
-            Shop
+            Home
           </Link>
           <Link href="/product" className="transition hover:text-plum">
             Product
