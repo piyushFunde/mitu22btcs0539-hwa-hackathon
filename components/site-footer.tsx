@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FooterLegal } from "@/components/footer-legal";
 import { PawIcon } from "@/components/icons";
 
 const productLinks = [
@@ -13,13 +14,6 @@ const careLinks = [
   { label: "Dishwasher Cleaning Guide", href: "/product" },
   { label: "FAQ & Returns", href: "/product#faqs" },
   { label: "Contact: support@slowbowl.dev", href: "mailto:support@slowbowl.dev" },
-];
-
-const safetyItems = [
-  "BPA-Free & Food-Grade Silicone",
-  "Supervised Play Advisory",
-  "Privacy Policy",
-  "Terms of Service",
 ];
 
 export function SiteFooter() {
@@ -82,16 +76,7 @@ export function SiteFooter() {
             </ul>
           </div>
 
-          <div>
-            <h3 className="text-xs font-medium uppercase tracking-wider text-white">
-              Safety &amp; Legal
-            </h3>
-            <ul className="mt-4 space-y-2 text-xs leading-relaxed text-[#CDBFD3]/80">
-              {safetyItems.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </div>
+          <FooterLegal />
         </div>
 
         <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs text-[#CDBFD3]/60 sm:flex-row">
